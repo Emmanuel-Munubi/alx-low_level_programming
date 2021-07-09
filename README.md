@@ -1,1 +1,1 @@
-Low-level programming & Algorithm course
+Low level programming
