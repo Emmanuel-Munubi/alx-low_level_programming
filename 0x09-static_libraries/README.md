@@ -1,2 +1,1 @@
-__Static Libraries__
-ALX Holberton
+Making libholberton.a static library
