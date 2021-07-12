@@ -1,29 +1,15 @@
 #include <stdio.h>
 #include "holberton.h"
-#include <unistd.h>
-
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
+* main - main
+* @argc: Counts number of commandline arguments
+* @argv: array containing string commandline arguments as elements
+*Description:
+*Return: 0
+*/
 
 int main(int argc, char *argv[])
 {
-  if (*argv[0] != '\0')
-    {
-      _putchar(*argv[0]);
-      _putchar('\n');
-    }
-  else if (*argv[0] == '\0')
-    {
-      _putchar('\n');
-    }
-  return(0);
+printf("%s\n", argv[0]);
+return (0);
 }
