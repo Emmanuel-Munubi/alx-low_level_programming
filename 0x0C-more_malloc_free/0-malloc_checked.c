@@ -10,4 +10,9 @@
 void *malloc_checked(unsigned int b)
 {
 int *p = (int *)malloc(b);
+if (!p)
+{
+exit(98);
+}
+return (p);
 }
