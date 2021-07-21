@@ -20,4 +20,6 @@ void naming(void)
 void print_name(char *name, void (*f)(char *))
 {
 	void (*f)(char *) = &naming;
+
+	f(name);
 }
