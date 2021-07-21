@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "holberton.h"
+#include "function_pointers.h"
 
 /**
  * naming - naming - uses putchar to print the string
