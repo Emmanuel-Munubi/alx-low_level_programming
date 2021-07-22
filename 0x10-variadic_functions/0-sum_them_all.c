@@ -5,6 +5,7 @@
 /**
  * sum_them_all - a function that returns the sum of all its parameters.
  * @n: int.
+ *
  * return:int.
  */
 int sum_them_all(const unsigned int n, ...)
