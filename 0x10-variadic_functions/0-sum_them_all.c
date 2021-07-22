@@ -1,10 +1,11 @@
+#include <stdio.h>
 #include <stdarg.h>
 #include "variadic_functions.h"
 
 /**
  * sum_them_all - a function that returns the sum of all its parameters.
  * @n: int.
- * return: int.
+ * return:int.
  */
 int sum_them_all(const unsigned int n, ...)
 {
@@ -13,7 +14,10 @@ int sum_them_all(const unsigned int n, ...)
 	double sum = 0;
 
 	if (n == 0)
+	{
 		return (0);
+	}
+
 	va_start(nums, n);
 	for (c = 0; c < n; c++)
 	{
@@ -24,4 +28,3 @@ int sum_them_all(const unsigned int n, ...)
 	va_end(nums);
 	return (sum);
 }
-
