@@ -4,7 +4,7 @@ Type for iterating arguments
 ## va_start
 Starts to iterate arguments with a va_list
 ## va_arg
-Receives an argument
+Accessing an argument
 ## va_end
 Frees a va_list
 
