@@ -1,85 +1,46 @@
 #include "variadic_functions.h"
 #include <stdlib.h>
 #include <stdio.h>
-
-/**
- * print_int - prints int
- * @list: arguments from print_all
- */
-void print_int(va_list list)
-{
-	printf("%d", va_arg(list, int));
-}
-
-/**
- * print_float - prints float
- * @list: arguments from print_all
- */
-void print_float(va_list list)
-{
-	printf("%f", va_arg(list, double));
-}
-
-/**
- * print_char - prints int
- * @list: arguments from print_all
- */
-void print_char(va_list list)
-{
-	printf("%c", va_arg(list, int));
-}
-
-/**
- * print_str - prints string
- * @list: arguments from print_all
- */
-void print_str(va_list list)
-{
-	char *s = va_arg(list, char *);
-
-	s == NULL ? printf("(nil)") : printf("%s", s);
-
-}
-
-/**
- * print_all - prints any type
- * @format: arguments to print
- */
+#include <stdarg.h>
 
 void print_all(const char * const format, ...)
 {
-va_list list;
-int i = 0, j = 0;
-char *sep = "";
+	va_list list;
+	va_start(list, format);
+	unsigned int i = 0;
+	const char *separator = ", ";
 
-printTypeStruct printType[] = {
-	{ "i", print_int },
-	{ "f", print_float },
-	{ "c", print_char },
-	{ "s", print_str },
-	{NULL, NULL}
-};
-
-
-va_start(list, format);
-
-while (format && format[i])
-{
-	j = 0;
-	while (j < 4)
+	while (format[i])
 	{
-		if (*printType[j].type == format[i])
+		switch (format[i])
 		{
-			printf("%s", sep);
-			printType[j].printer(list);
-			sep = ", ";
+		case 'c':
+			printf("%c", va_arg(list, char));
+			break;
+		case 'f':
+			printf("%f", va_arg(list, float));
+			break;
+		case 'i':
+			printf("%d", va_arg(list, int));
+			break;
+		case 's':
+			if (format[i] != NULL)
+				printf("%s", va_arg(list, char *));
+			else
+				printf("(nil)");
+			break;
+		default:
 			break;
 		}
-		j++;
+		printf("%s", separator);
+		i++;
 	}
-	i++;
+
+	va_end(list);
 }
 
-printf("\n");
-va_end(list);
+int main(void)
+{
+    print_all("ceis", 'H', 0, "lberton");
+    return (0);
 }
