@@ -1,19 +1,18 @@
 #include "lists.h"
+
 /**
- * listint_len - a function that returns the number of elements in the list.
- * @h: list
- * Return: Number of elements in the list.
+ * listint_len - calculate the len oh a list
+ * @h: linked list
+ *
+ * Return: node counter
  */
 size_t listint_len(const listint_t *h)
 {
-	const listint_t *l = h;
-	unsigned int i = 0;
+	unsigned int count;
 
-	while (l != NULL)
+	while (h != NULL)
 	{
-		i++;
-		l = l->next;
-	}
-	return (i);
+		count++;
+		h = h->next;
+	} return (count);
 }
-
