@@ -6,5 +6,6 @@
 
 unsigned int binary_to_uint(const char *b);
 unsigned int _pow(unsigned int n, unsigned int p);
+void print_binary(unsigned long int n);
 
 #endif
